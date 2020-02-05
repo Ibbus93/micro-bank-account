@@ -1,5 +1,7 @@
 import Account from './account';
+import Unauthorized from "./unauthorized";
 
 export {
-    Account
+    Account,
+    Unauthorized
 };

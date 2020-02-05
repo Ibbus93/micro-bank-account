@@ -4,9 +4,9 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import './index.css';
 
-window.renderBankAccount = (containerId, history, handler) => {
+window.renderBankAccount = (containerId, history, handler, auth) => {
     ReactDOM.render(
-        <App history={history} handler={handler} />,
+        <App history={history} handler={handler} auth={auth} />,
         document.getElementById(containerId)
     );
 };
