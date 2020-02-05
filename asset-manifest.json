@@ -1,9 +1,9 @@
 {
   "main.css": "/micro-bank-account/static/css/main.8f537094.css",
-  "main.js": "/micro-bank-account/static/js/main.8b97eaf4.js",
-  "main.js.map": "/micro-bank-account/static/js/main.8b97eaf4.js.map",
+  "main.js": "/micro-bank-account/static/js/main.da898c3a.js",
+  "main.js.map": "/micro-bank-account/static/js/main.da898c3a.js.map",
   "index.html": "/micro-bank-account/index.html",
-  "precache-manifest.abd5350a14929b2ef032a26857251d87.js": "/micro-bank-account/precache-manifest.abd5350a14929b2ef032a26857251d87.js",
+  "precache-manifest.7a899157d5ce7ab2b9ccba8d45cc9d1d.js": "/micro-bank-account/precache-manifest.7a899157d5ce7ab2b9ccba8d45cc9d1d.js",
   "service-worker.js": "/micro-bank-account/service-worker.js",
   "static/css/main.8f537094.css.map": "/micro-bank-account/static/css/main.8f537094.css.map"
 }
