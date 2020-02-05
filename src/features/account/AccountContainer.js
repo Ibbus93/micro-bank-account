@@ -1,10 +1,34 @@
-import React from 'react';
-import { Box, Container } from './components';
+import React, { useEffect } from 'react';
+import { connect, useSelector } from 'react-redux';
 
-const AccountContainer = () => (
-    <Container>
-        <h2>Bank Account</h2>
-    </Container>
-);
+import { CircularProgress } from '@material-ui/core';
+import { Account } from './components';
+import { Container } from './components/styled'
 
-export default AccountContainer;
+import { Selector } from '../../store/bank-account/reducer';
+import { requestAccount } from '../../store/bank-account/actions';
+
+const AccountContainer = ({ getAccount }) => {
+    const { data, isLoading } = useSelector(Selector.getAccount);
+    const id = '1';
+
+    useEffect(() => {
+        if (!data) {
+            getAccount({ id });
+        }
+    }, [data]);
+
+    return isLoading
+        ? <CircularProgress />
+        : (
+            <Container>
+                <Account { ...data } />
+            </Container>
+        );
+};
+
+const dispatchToProps = {
+    getAccount: requestAccount
+};
+
+export default connect(null, dispatchToProps)(AccountContainer);

@@ -3,9 +3,9 @@ import { call, put, takeLatest } from 'redux-saga/effects';
 import { TYPES, receivedAccount, accountError } from './actions';
 import { getAccount } from '../../api';
 
-function* fetchAccount({ id }) {
+function* fetchAccount({ payload: { id }}) {
     try {
-        const account = yield call(getAccount, id);
+        const account = yield call(getAccount, { id });
 
         yield put(receivedAccount({ account }));
     } catch (e) {
