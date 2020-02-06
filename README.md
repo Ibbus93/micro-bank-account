@@ -1,7 +1,8 @@
 # Micro Bank Account
-### A React microfrontend with token based authentication  
+A React microfrontend with token based authentication based on Web Components
 
----
+## Demo
+https://ibbus93.github.io/micro-bank-account/
 
 ## Goals and motivations
 The motivation behind this project is to test a personal approach to microfrontends. The goal of the 
@@ -21,7 +22,27 @@ Hence, after the project stars, there are two possible behaviours:
   * **the project is loaded by the container**, then it shows the account when a user is logged in.
 
 The requested bank account data are exposed by a Mock Postman server.
-  
+
+## Project structure
+The structure is very light and easy:
+  *  `/public` contains the index.html to let the project work as standalone;
+  *  `/src` contains the core of the project, in particular:
+     *  `/api` contains the GET request of the bank account data;
+     *  `/features` contains the account page and the page showed if the user is not authorized;
+     *  `/store` contains the redux store with the saga effects to make the GET request.
+
+## Technologies
+This project is build using [React App Rewired](https://github.com/timarney/react-app-rewired), 
+hence it requires a `config-overrides.js` file in order to work.
+
+Other notable technologies used are:
+  *  [Material UI](https://github.com/mui-org/material-ui)
+  *  [Styled Components](https://github.com/styled-components/styled-components)
+  *  [Axios](https://github.com/axios/axios)
+  *  [Redux](https://github.com/reduxjs/react-redux)
+  *  [Redux Saga](https://github.com/redux-saga/redux-saga)
+  *  [Redux Actions](https://github.com/redux-utilities/redux-actions)
+        
 ## Getting started
 
 1. Clone the repository
