@@ -1,5 +1,6 @@
 import React from 'react';
 import { Balance, OperationElement, OperationRow } from './styled';
+import PropTypes from 'prop-types';
 
 const Operation = ({
     date,
@@ -30,6 +31,24 @@ const Operation = ({
             </OperationElement>
         </OperationRow>
     );
+};
+
+Operation.propTypes = {
+    amount: PropTypes.number,
+    holder: PropTypes.string,
+    type: PropTypes.string,
+    operation: PropTypes.string,
+    description: PropTypes.string,
+    date: PropTypes.string
+};
+
+Operation.defaultProps = {
+    amount: 0,
+    holder: '',
+    type: '',
+    operation: '',
+    description: '',
+    date: ''
 };
 
 export default Operation;

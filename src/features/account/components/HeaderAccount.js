@@ -1,8 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import { AccountCircle } from '@material-ui/icons';
 import { Typography } from '@material-ui/core';
-
 import { AccountIcon, Balance, BalanceBox, Header, HolderInfo } from './styled';
 
 const HeaderAccount = ({
@@ -28,6 +28,21 @@ const HeaderAccount = ({
         </AccountIcon>
     </Header>
 );
+
+HeaderAccount.propTypes = {
+    holder: PropTypes.string,
+    iban: PropTypes.string,
+    balance: PropTypes.number,
+    currency: PropTypes.string,
+};
+
+HeaderAccount.defaultProps = {
+    holder: '',
+    iban: '',
+    balance: 0,
+    currency: '',
+};
+
 
 export default HeaderAccount;
 

@@ -6,7 +6,7 @@ import './index.css';
 
 window.renderBankAccount = (containerId, history, handler, auth) => {
     ReactDOM.render(
-        <Root history={history} handler={handler} auth={auth} />,
+        <Root history={history} auth={auth} />,
         document.getElementById(containerId)
     );
 };

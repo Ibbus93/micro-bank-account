@@ -1,4 +1,9 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
+import { Router } from 'react-router-dom';
+import { createBrowserHistory } from 'history';
+
 import styled from 'styled-components';
 
 import { Provider } from 'react-redux';
@@ -15,19 +20,22 @@ const AppWrapper = styled.div`
     font-family: Roboto;
 `;
 
-const App = () => (
+const App = ({ history }) => (
     <Provider store={store}>
-        <AppWrapper>
-            <Account />
-        </AppWrapper>
+        <Router history={history}>
+            <AppWrapper>
+                <Account />
+            </AppWrapper>
+        </Router>
     </Provider>
 );
 
+App.propTypes = {
+    history: PropTypes.any
+};
+
 App.defaultProps = {
-    auth: {
-        id: null,
-        token: null
-    },
+    history: createBrowserHistory()
 };
 
 export default App;

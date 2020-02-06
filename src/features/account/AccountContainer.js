@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import PropTypes from 'prop-types';
 import { connect, useSelector } from 'react-redux';
 
 import { CircularProgress } from '@material-ui/core';
@@ -16,7 +17,7 @@ const AccountContainer = ({ getAccount }) => {
         if (!data) {
             getAccount({ id });
         }
-    }, [data]);
+    }, [data, getAccount]);
 
     return isLoading
         ? <CircularProgress />
@@ -25,6 +26,14 @@ const AccountContainer = ({ getAccount }) => {
                 <Account { ...data } />
             </Container>
         );
+};
+
+AccountContainer.propTypes = {
+    getAccount: PropTypes.func
+};
+
+AccountContainer.defaultProps = {
+    getAccount: () => {}
 };
 
 const dispatchToProps = {

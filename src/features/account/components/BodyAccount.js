@@ -1,10 +1,11 @@
 import React from 'react';
-import { Balance, RecentBalanceBox, BodyContainer, OperationContainer, OperationElement, OperationRow } from './styled';
-import { Typography } from '@material-ui/core';
+import PropTypes from 'prop-types';
+
 import Operation from './Operation';
+import { Typography } from '@material-ui/core';
+import { Balance, RecentBalanceBox, BodyContainer, OperationContainer, OperationElement, OperationRow } from './styled';
 
 const BodyAccount = ({
-    currency,
     lastBalance,
     lastOperations
 }) => (
@@ -27,10 +28,29 @@ const BodyAccount = ({
         <RecentBalanceBox align="right" marginTop="1rem">
             <Typography variant="h4">
                 Recent balance:
-                <Balance color={lastBalance > 0 ? 'green' : 'red'}> {currency} {lastBalance}</Balance>
+                <Balance color={lastBalance > 0 ? 'green' : 'red'}> {} {lastBalance}</Balance>
             </Typography>
         </RecentBalanceBox>
     </BodyContainer>
 );
+
+BodyAccount.propTypes = {
+    lastBalance: PropTypes.string,
+    lastOperations: PropTypes.arrayOf(PropTypes.shape({
+        id: PropTypes.string,
+        amount: PropTypes.number,
+        holder: PropTypes.string,
+        type: PropTypes.string,
+        operation: PropTypes.string,
+        description: PropTypes.string,
+        date: PropTypes.string
+    })),
+};
+
+BodyAccount.defaultProps = {
+    lastBalance: '',
+    lastOperations: []
+};
+
 
 export default BodyAccount;
