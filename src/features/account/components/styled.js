@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { AccountCircle } from '@material-ui/icons';
 
 const Container = styled.div`
     display: flex;
@@ -12,7 +11,7 @@ const Container = styled.div`
 `;
 
 const Box = styled.div`
-    padding: 2.5rem;
+    padding: 3rem;
     width: 100%;
 `;
 
@@ -39,22 +38,52 @@ const HolderInfo = styled.div`
 
 const BalanceBox = styled.div`
     margin-left: auto;
-    color: ${props => props.color}
 `;
 
-const OperationBox = styled.div`
+const RecentBalanceBox = styled.div`
+    text-align: right;
+    margin-top: 3rem;
+`;
+
+const Balance = styled.span`
+    color: ${props => props.color};
+    text-align: ${props => props.align || 'left'};
+`;
+
+const OperationContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+    border-radius: 20px;
+    padding: 1rem 2rem;
+    background: lightblue;
+    font-size: 20px;
+`;
+
+const OperationRow = styled.div`
     display: flex;
     flex-direction: row;
-    margin-top: 3rem;
+    margin-top: 1rem;
+    font-weight: ${props => props.fontWeight || 'normal'};
+`;
+
+const OperationElement = styled.div`
+    padding: 0.5rem;
+    text-align: ${props => props.align || 'left'};
+    width: ${props => props.width}
 `;
 
 export {
     Box,
     Header,
+    Balance,
     Container,
     HolderInfo,
     BalanceBox,
     AccountIcon,
-    OperationBox,
-    BodyContainer
+    OperationRow,
+    BodyContainer,
+    OperationElement,
+    RecentBalanceBox,
+    OperationContainer,
 }

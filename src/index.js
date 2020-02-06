@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import App from './App';
+import Root from './Root';
 import './index.css';
 
 window.renderBankAccount = (containerId, history, handler, auth) => {
     ReactDOM.render(
-        <App history={history} handler={handler} auth={auth} />,
+        <Root history={history} handler={handler} auth={auth} />,
         document.getElementById(containerId)
     );
 };

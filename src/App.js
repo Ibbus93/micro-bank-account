@@ -4,8 +4,7 @@ import styled from 'styled-components';
 import { Provider } from 'react-redux';
 import store from './store';
 
-import { Account, Unauthorized } from './features';
-import { Box } from "./features/account/components/styled";
+import { Account } from './features';
 
 const AppWrapper = styled.div`
     height: 100%;
@@ -16,21 +15,12 @@ const AppWrapper = styled.div`
     font-family: Roboto;
 `;
 
-const App = ({
-    auth: {
-        id,
-        token
-    },
-}) => (
-    !id && !token
-        ? <Box><Unauthorized /></Box>
-        : (
-            <Provider store={store}>
-                <AppWrapper>
-                    <Account />
-                </AppWrapper>
-            </Provider>
-        )
+const App = () => (
+    <Provider store={store}>
+        <AppWrapper>
+            <Account />
+        </AppWrapper>
+    </Provider>
 );
 
 App.defaultProps = {

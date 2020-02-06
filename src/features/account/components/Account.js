@@ -26,7 +26,7 @@ const Account = ({
         <Box>
             <HeaderAccount balance={balance} currency={currency} holder={holder} iban={iban} />
             { !!lastOperations && (
-                <BodyAccount lastOperations={lastOperations} lastBalance={getLastOperationsBalance()} />
+                <BodyAccount lastOperations={lastOperations} lastBalance={getLastOperationsBalance()} currency={currency} />
             )}
         </Box>
     );
