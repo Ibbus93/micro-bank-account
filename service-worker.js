@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/micro-bank-account/precache-manifest.0f197db9167a156c6ab880c4072cf944.js"
+  "/micro-bank-account/precache-manifest.48eb175b3c08fa8eb16267d6cc3a18e1.js"
 );
 
 workbox.clientsClaim();
