@@ -42,7 +42,7 @@ const BalanceBox = styled.div`
 
 const RecentBalanceBox = styled.div`
     text-align: right;
-    margin-top: 3rem;
+    margin-top: ${props => props.marginTop || '3rem'};
 `;
 
 const Balance = styled.span`

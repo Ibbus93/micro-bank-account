@@ -10,9 +10,7 @@
     "format": "prettier --write",
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
-    "test": "react-app-rewired test",
-    "predeploy": "yarn build",
-    "deploy": "gh-pages -d build"
+    "test": "react-app-rewired test"
   },
   "dependencies": {
     "@material-ui/core": "^4.9.0",
@@ -31,7 +29,6 @@
     "yup": "^0.28.1"
   },
   "devDependencies": {
-    "gh-pages": "^2.2.0",
     "react-app-rewired": "^2.1.1"
   },
   "prettier": {

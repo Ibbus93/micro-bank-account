@@ -24,7 +24,7 @@ const BodyAccount = ({
                  <Operation {...operation} key={operation.id} />
             ))}
         </OperationContainer>
-        <RecentBalanceBox align="right">
+        <RecentBalanceBox align="right" marginTop="1rem">
             <Typography variant="h4">
                 Recent balance:
                 <Balance color={lastBalance > 0 ? 'green' : 'red'}> {currency} {lastBalance}</Balance>

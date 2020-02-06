@@ -10,19 +10,19 @@ const AuthContainer = styled.div`
 `;
 
 const Unauthorized = () => {
-    const [viewAccount, setViewAccount] = useState(false);
+    const [showAccount, setShowAccount] = useState(false);
 
-    return viewAccount
+    return showAccount
         ? <App />
         : (
             <AuthContainer>
                 <h2>You are not authorized to access to this content</h2>
                 <Button
-                    onClick={() => setViewAccount(true)}
+                    onClick={() => setShowAccount(true)}
                     variant="contained"
                     color="primary"
                 >
-                    View Account anyway
+                    Show Account anyway
                 </Button>
             </AuthContainer>
         );
