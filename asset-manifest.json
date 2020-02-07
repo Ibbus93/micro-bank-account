@@ -1,9 +1,16 @@
 {
-  "main.css": "/micro-bank-account/static/css/main.8f537094.css",
-  "main.js": "/micro-bank-account/static/js/main.5fd96964.js",
-  "main.js.map": "/micro-bank-account/static/js/main.5fd96964.js.map",
-  "index.html": "/micro-bank-account/index.html",
-  "precache-manifest.2c64182bd99210c41415713f4c663fa7.js": "/micro-bank-account/precache-manifest.2c64182bd99210c41415713f4c663fa7.js",
-  "service-worker.js": "/micro-bank-account/service-worker.js",
-  "static/css/main.8f537094.css.map": "/micro-bank-account/static/css/main.8f537094.css.map"
+  "files": {
+    "main.css": "/micro-bank-account/static/css/main.1c7cd5fc.css",
+    "main.js": "/micro-bank-account/static/js/main.8272ed2e.js",
+    "main.js.map": "/micro-bank-account/static/js/main.8272ed2e.js.map",
+    "index.html": "/micro-bank-account/index.html",
+    "precache-manifest.8098eefe4717f81c742902570607f1f7.js": "/micro-bank-account/precache-manifest.8098eefe4717f81c742902570607f1f7.js",
+    "service-worker.js": "/micro-bank-account/service-worker.js",
+    "static/css/main.1c7cd5fc.css.map": "/micro-bank-account/static/css/main.1c7cd5fc.css.map",
+    "static/js/main.8272ed2e.js.LICENSE.txt": "/micro-bank-account/static/js/main.8272ed2e.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/css/main.1c7cd5fc.css",
+    "static/js/main.8272ed2e.js"
+  ]
 }
