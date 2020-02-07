@@ -14,7 +14,7 @@ const Root = ({
 }) => (
     !id && !token
         ? <Unauthorized />
-        : <App history={history} />
+        : <App history={history} auth={{id, token}} />
 );
 
 Root.propTypes = {

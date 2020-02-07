@@ -20,18 +20,22 @@ const AppWrapper = styled.div`
     font-family: Roboto;
 `;
 
-const App = ({ history }) => (
+const App = ({ history, auth }) => (
     <Provider store={store}>
         <Router history={history}>
             <AppWrapper>
-                <Account />
+                <Account auth={auth} />
             </AppWrapper>
         </Router>
     </Provider>
 );
 
 App.propTypes = {
-    history: PropTypes.any
+    history: PropTypes.any,
+    auth: PropTypes.shape({
+        id: PropTypes.string,
+        token: PropTypes.string
+    }).isRequired,
 };
 
 App.defaultProps = {

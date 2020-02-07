@@ -9,15 +9,20 @@ import { Container } from './components/styled'
 import { Selector } from '../../store/bank-account/reducer';
 import { requestAccount } from '../../store/bank-account/actions';
 
-const AccountContainer = ({ getAccount }) => {
+const AccountContainer = ({
+    auth: {
+        id,
+        token
+    },
+    getAccount
+}) => {
     const { data, isLoading } = useSelector(Selector.getAccount);
-    const id = '1';
 
     useEffect(() => {
         if (!data) {
-            getAccount({ id });
+            getAccount({ id, token });
         }
-    }, [data, getAccount]);
+    }, [data, getAccount, id, token]);
 
     return isLoading
         ? <CircularProgress />
@@ -29,6 +34,10 @@ const AccountContainer = ({ getAccount }) => {
 };
 
 AccountContainer.propTypes = {
+    auth: PropTypes.shape({
+        id: PropTypes.string,
+        token: PropTypes.string
+    }),
     getAccount: PropTypes.func
 };
 

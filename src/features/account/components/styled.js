@@ -3,7 +3,7 @@ import styled from 'styled-components';
 const Container = styled.div`
     display: flex;
     flex-wrap: wrap;
-    height: 80%;
+    height: 90%;
     width: 100%;
     max-width: 960px;
     background: white;

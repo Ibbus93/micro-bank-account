@@ -11,9 +11,13 @@ const AuthContainer = styled.div`
 
 const Unauthorized = () => {
     const [showAccount, setShowAccount] = useState(false);
+    const auth = {
+        id: '24482ad6-bee7-4a9f-b597-2673ed5f7752',
+        token: 'token'
+    };
 
     return showAccount
-        ? <App />
+        ? <App auth={auth} />
         : (
             <AuthContainer>
                 <h2>You are not authorized to access to this content</h2>
