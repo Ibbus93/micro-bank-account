@@ -7,10 +7,11 @@
   "author": "Federico Ibba",
   "license": "MIT",
   "scripts": {
-    "format": "prettier --write",
-    "start": "react-app-rewired start",
-    "build": "react-app-rewired build",
-    "test": "react-app-rewired test"
+    "start": "webpack-dev-server",
+    "watch": "webpack --watch",
+    "build": "webpack --mode production",
+    "clean": "rm -rf dist",
+    "format": "prettier --write"
   },
   "dependencies": {
     "@material-ui/core": "^4.9.1",
@@ -30,8 +31,17 @@
     "styled-components": "^4.3.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.8.6",
+    "@babel/preset-react": "^7.8.3",
+    "babel-loader": "^8.0.6",
+    "css-loader": "3.5.3",
     "gh-pages": "^2.2.0",
-    "react-app-rewired": "^2.1.1"
+    "html-webpack-plugin": "git://github.com/ScriptedAlchemy/html-webpack-plugin#master",
+    "serve": "^11.3.0",
+    "style-loader": "^1.2.1",
+    "webpack": "^5.0.0-beta.16",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.11.0"
   },
   "prettier": {
     "singleQuote": true,
