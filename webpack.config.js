@@ -20,8 +20,8 @@ module.exports = {
   },
 
   output: {
-    publicPath: 'http://localhost:3001/',
-    // 'http://app-micro-login.s3-website-eu-west-1.amazonaws.com/',
+    //'http://localhost:3001/',
+    publicPath: 'http://app-bank-account.s3-website-eu-west-1.amazonaws.com/',
   },
 
   resolve: {
@@ -47,7 +47,7 @@ module.exports = {
 
   plugins: [
     new ModuleFederationPlugin({
-      name: 'signIn',
+      name: 'bankAccount',
       library: { type: 'var', name: 'bankAccount' },
       filename: 'remoteEntry.js',
       remotes: {
