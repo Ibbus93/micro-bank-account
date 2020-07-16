@@ -2,6 +2,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ModuleFederationPlugin = require('webpack').container
   .ModuleFederationPlugin;
 
+const deps = require("./package.json").dependencies;
+
 module.exports = {
   entry: './src/index',
   cache: false,
@@ -12,7 +14,7 @@ module.exports = {
   devServer: {
     contentBase: './dist',
     host: 'localhost',
-    port: '3001',
+    port: '3002',
   },
 
   optimization: {
@@ -20,7 +22,7 @@ module.exports = {
   },
 
   output: {
-    //'http://localhost:3001/',
+    // publicPath: 'http://localhost:3002/',
     publicPath: 'http://app-bank-account.s3-website-eu-west-1.amazonaws.com/',
   },
 
@@ -54,9 +56,20 @@ module.exports = {
         component_library: 'component_library',
       },
       exposes: {
-        BankAccount: './src/Root',
+        './BankAccount': './src/Root',
       },
-      shared: ['react', 'react-dom', '@material-ui/core', '@material-ui/icons'],
+      shared: {
+        react: {
+          eager: true,
+          singleton: true,
+          requiredVersion: deps.react,
+        },
+        "react-dom": {
+          eager: true,
+          singleton: true,
+          requiredVersion: deps["react-dom"],
+        },
+      }
     }),
     new HtmlWebpackPlugin({
       template: './public/index.html',
